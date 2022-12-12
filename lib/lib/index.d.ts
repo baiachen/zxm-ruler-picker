@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from "react";
 import "./index.css";
 type IProps = {
     minScale: number;
@@ -6,5 +6,5 @@ type IProps = {
     initScale: number;
     onChange: any;
 };
-export default function Index({ minScale, maxScale, initScale, onChange, }: IProps): JSX.Element;
-export {};
+declare const Index: React.FC<IProps>;
+export default Index;

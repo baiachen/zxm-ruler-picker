@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useRef, useState } from "react";
 import "./index.css";
 import BScroll from "@better-scroll/core";
@@ -10,12 +11,12 @@ type IProps = {
   onChange: any;
 };
 
-export default function Index({
+const Index: React.FC<IProps> = ({
   minScale = 0,
   maxScale = 100,
   initScale = 80,
   onChange = () => {},
-}: IProps) {
+}: IProps) => {
   const spanNum = 60;
   const myScroll = useRef<any>(null);
   const ruleWrap = useRef<any>(null);
@@ -90,4 +91,6 @@ export default function Index({
       </div>
     </div>
   );
-}
+};
+
+export default Index;

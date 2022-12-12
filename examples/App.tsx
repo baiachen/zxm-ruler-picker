@@ -1,5 +1,7 @@
-import Ruler from "../src/index";
+import React from "react";
+import Ruler from "zxm-ruler-picker";
 
+console.log('Ruler')
 function App() {
   return (
     <div className="App">

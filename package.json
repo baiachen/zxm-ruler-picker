@@ -1,11 +1,11 @@
 {
   "name": "zxm-ruler-picker",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "type": "module",
   "main": "./lib/zxm-ruler-picker.umd.js",
   "module": "./lib/zxm-ruler-picker.js",
   "repository": {
-    "url": ""
+    "url": "https://github.com/zhoujie16/zxm-ruler-picker"
   },
   "files": [
     "lib"
@@ -19,7 +19,8 @@
   "dependencies": {
     "@better-scroll/core": "^2.5.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "zxm-ruler-picker": "^1.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^10.0.1",
