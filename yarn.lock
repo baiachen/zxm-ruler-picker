@@ -801,3 +801,13 @@ zxm-ruler-picker@^1.0.0:
     "@better-scroll/core" "^2.5.0"
     react "^18.2.0"
     react-dom "^18.2.0"
+
+zxm-ruler-picker@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/zxm-ruler-picker/-/zxm-ruler-picker-1.0.1.tgz#cb53b33fc48e6a1528e9bbe1edf41b6d52f4e9fe"
+  integrity sha512-F2MQoIaDZf5mVUda+WOCqqW82tqPikWwBUAUfisAvKSNqof5+bbRm09IeMzOK6twk0fhIpIa7TZF8xGisOx2Gw==
+  dependencies:
+    "@better-scroll/core" "^2.5.0"
+    react "^18.2.0"
+    react-dom "^18.2.0"
+    zxm-ruler-picker "^1.0.0"
