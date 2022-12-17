@@ -20,7 +20,7 @@
 * floatObj.multiply(19.9, 100) === 1990
 *
 */
-export const floatObj = (function () {
+export const floatObj = (function() {
   /*
    * 判断obj是否为一个整数 整数取整后还是等于自己。利用这个特性来判断是否是整数
    */
@@ -43,8 +43,8 @@ export const floatObj = (function () {
       ret.num = floatNum;
       return ret; //是整数直接返回
     }
-    var strfi = floatNum + ""; // 转换为字符串
-    var dotPos = strfi.indexOf(".");
+    var strfi = floatNum + ''; // 转换为字符串
+    var dotPos = strfi.indexOf('.');
     var len = strfi.substr(dotPos + 1).length; // 拿到小数点之后的位数
     var times = Math.pow(10, len); // 精度倍数
     /* 为什么加0.5?
@@ -54,8 +54,8 @@ export const floatObj = (function () {
             少了0.0000000001
             加上0.5 0.16344556*10000000+0.5=1634456.0999999999 parseInt之后乘法的精度问题得以矫正
         */
-    var pi: any = Math.abs(floatNum) * times + 0.5;
-    var intNum = parseInt(pi, 10);
+    var tmp: any = Math.abs(floatNum) * times + 0.5;
+    var intNum = parseInt(tmp, 10);
     // debugger;
     ret.times = times;
     if (isNegative) {
@@ -71,7 +71,7 @@ export const floatObj = (function () {
    * @param a {number} 运算数1
    * @param b {number} 运算数2
    */
-  function operation(a: any, b: any, op: any) {
+  function operation(a: any, b: any, op: any): any {
     var o1 = toInteger(a);
     var o2 = toInteger(b);
     var n1 = o1.num; // 3.25+3.153
@@ -82,7 +82,7 @@ export const floatObj = (function () {
     var result = null;
     switch (op) {
       // 加减需要根据倍数关系来处理
-      case "add":
+      case 'add':
         if (t1 === t2) {
           // 两个小数倍数相同
           result = n1 + n2;
@@ -94,7 +94,7 @@ export const floatObj = (function () {
           result = n1 * (t2 / t1) + n2;
         }
         return result / max;
-      case "subtract":
+      case 'subtract':
         if (t1 === t2) {
           result = n1 - n2;
         } else if (t1 > t2) {
@@ -103,11 +103,11 @@ export const floatObj = (function () {
           result = n1 * (t2 / t1) - n2;
         }
         return result / max;
-      case "multiply":
+      case 'multiply':
         // 325*3153/(100*1000) 扩大100倍 ==>缩小100倍
         result = (n1 * n2) / (t1 * t2);
         return result;
-      case "divide":
+      case 'divide':
         // (325/3153)*(1000/100)  缩小100倍 ==>扩大100倍
         result = (n1 / n2) * (t2 / t1);
         return result;
@@ -116,16 +116,16 @@ export const floatObj = (function () {
 
   // 加减乘除的四个接口
   function add(a: any, b: any) {
-    return operation(a, b, "add");
+    return operation(a, b, 'add');
   }
   function subtract(a: any, b: any) {
-    return operation(a, b, "subtract");
+    return operation(a, b, 'subtract');
   }
   function multiply(a: any, b: any) {
-    return operation(a, b, "multiply");
+    return operation(a, b, 'multiply');
   }
   function divide(a: any, b: any) {
-    return operation(a, b, "divide");
+    return operation(a, b, 'divide');
   }
   return {
     add: add,
