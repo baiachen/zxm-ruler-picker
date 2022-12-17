@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "1.0.1",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -33,16 +33,16 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "testppp",
+  "name": "zxm-ruler-picker",
   "author": "zhoujie16",
-  "module": "dist/testppp.esm.js",
+  "module": "dist/zxm-ruler-picker.esm.js",
   "size-limit": [
     {
-      "path": "dist/testppp.cjs.production.min.js",
+      "path": "dist/zxm-ruler-picker.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/testppp.esm.js",
+      "path": "dist/zxm-ruler-picker.esm.js",
       "limit": "10 KB"
     }
   ],
