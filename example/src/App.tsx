@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import './App.css';
-import { Ruler } from '../../.';
+// import { Ruler } from '../../.';
+import { Ruler } from 'zxm-ruler-picker';
 
 function App() {
   return (
