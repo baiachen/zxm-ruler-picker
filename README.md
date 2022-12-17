@@ -15,7 +15,11 @@
 // maxScale: number;  最大刻度
 // initScale: number; 初始刻度
 // onChange: any;     刻度变化回调方法
+
+// 注意 如果项目里使用了 postcss 需要忽略转换 zxm_rs 开头的css类名
 ```
+
+
 
 ```javascript
 import { Ruler } from 'zxm-ruler-picker'
