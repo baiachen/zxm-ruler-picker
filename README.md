@@ -2,7 +2,7 @@
 ----
 
 ## 效果
-<img src="https://s1.ax1x.com/2022/12/18/zbJIBV.png" style="width: 375px" />
+<img src="https://s1.ax1x.com/2022/12/19/zqrvad.png" style="width: 375px" />
 
 ## 安装
 ```yarn add zxm-ruler-picker```
