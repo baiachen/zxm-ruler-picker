@@ -5,9 +5,16 @@
   font-family: DINAlternate-Bold;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
   margin-bottom: 12px;
   width: 100%;
+}
+
+.zxm_rs_value .zxm_rs_unit {
+  font-size: 18px;
+  color: #999999;
+  padding-left: 8px;
+  font-weight: normal;
 }
 
 .zxm_rs {

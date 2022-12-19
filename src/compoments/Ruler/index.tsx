@@ -4,16 +4,20 @@ import BScroll from '@better-scroll/core';
 import { initList } from './utils';
 
 type IProps = {
-  minScale: number;
-  maxScale: number;
-  initScale: number;
-  onChange: any;
+  minScale?: number;
+  maxScale?: number;
+  initScale?: number;
+  defScale?: number;
+  unit?: string;
+  onChange?: any;
 };
 
 export default function Index({
   minScale = 0,
   maxScale = 100,
   initScale = 80,
+  defScale = 80,
+  unit = 'cm',
   onChange = () => {},
 }: IProps) {
   const spanNum = 60;
@@ -32,13 +36,20 @@ export default function Index({
 
   const setRuleValue = (val: number) => {
     const offset = (baseValue.current - val) * spanNum;
-    myScroll.current.scrollTo(offset);
+    myScroll.current.scrollTo(offset, 0, 0);
   };
   useEffect(() => {
     setTimeout(() => {
-      setRuleValue(initScale);
+      setRuleValue(initScale || defScale);
     }, 300);
   }, [initScale]);
+
+  const scrollHandle = (e: { x: number; y: number }) => {
+    const _value: any = (baseValue.current - e.x / spanNum).toFixed(1);
+    // console.log("scroll", e.x, _value);
+    onChange(_value);
+    setValue(_value);
+  };
 
   useEffect(() => {
     baseValue.current = minScale + ruleWrap.current.clientWidth / 2 / spanNum;
@@ -52,17 +63,18 @@ export default function Index({
     (window as any).ms = myScroll.current;
     // console.log("myScroll", myScroll.current);
 
-    myScroll.current.on('scroll', (e: { x: number; y: number }) => {
-      const _value: any = (baseValue.current - e.x / spanNum).toFixed(1);
-      // console.log("scroll", e.x, _value);
-      onChange(_value);
-      setValue(_value);
-    });
+    myScroll.current.on('scroll', scrollHandle);
+    return () => {
+      myScroll.current.off('scroll', scrollHandle);
+    };
   }, []);
 
   return (
     <div className="zxm_rule_select_wrap" ref={ruleWrap}>
-      <div className="zxm_rs_value">{value}</div>
+      <div className="zxm_rs_value">
+        <span className="zxm_rs_value_text">{value}</span>
+        <span className="zxm_rs_unit">{unit}</span>
+      </div>
       <div className="zxm_rs">
         <div className="zxm_rs_arrow"></div>
         <div className="zxm_rs_inner" ref={ruleContent}>
