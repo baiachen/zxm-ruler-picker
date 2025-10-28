@@ -155,6 +155,6 @@ export const initList = ({
     ...x,
     isInt: x.value % 1 === 0,
   }));
-  console.log(list);
+  // console.log(list);
   return list;
 };
