@@ -81,7 +81,6 @@ export default function Index({
           <div className="zxm_rs_ul_wrap" style={{ width: `${ruleWidth}px` }}>
             <div className="zxm_rs_ul">
               {ruleList.map((x: any) => (
-                <>
                   <div
                     key={x.value}
                     className={`zxm_rs_li${x.isInt ? ' zxm_rs_li_int' : ''}`}
@@ -94,7 +93,6 @@ export default function Index({
                       <></>
                     )}
                   </div>
-                </>
               ))}
             </div>
           </div>
